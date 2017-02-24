@@ -40,13 +40,13 @@ public class Controller {
     }
 
     //jmeter random parameter
-    @RequestMapping(value = "/ramdom/{gender}", method = RequestMethod.GET)
+    @RequestMapping(value = "/random/{gender}", method = RequestMethod.GET)
     public boolean testRandomPathVariable(@PathVariable("gender") String gender){
         log.info("testRandomPathVariable() {}", gender);
         return true;
     }
 
-    @RequestMapping(value = "/ramdom", method = RequestMethod.GET)
+    @RequestMapping(value = "/random", method = RequestMethod.GET)
     public boolean testRandomRequestParam(@RequestParam String gender){
         log.info("testRandomRequestParam() random requestParam {}", gender);
         return true;
