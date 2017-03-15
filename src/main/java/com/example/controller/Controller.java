@@ -40,6 +40,7 @@ public class Controller {
     }
 
     //jmeter random parameter
+//    random?gender=a
     @RequestMapping(value = "/random/{gender}", method = RequestMethod.GET)
     public boolean testRandomPathVariable(@PathVariable("gender") String gender){
         log.info("testRandomPathVariable() {}", gender);
@@ -50,5 +51,12 @@ public class Controller {
     public boolean testRandomRequestParam(@RequestParam String gender){
         log.info("testRandomRequestParam() random requestParam {}", gender);
         return true;
+    }
+
+    // /123
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String getAsset(@PathVariable("id") long id){
+        System.out.println("id controller called.");
+        return "{\"asset\": {\"id\": " + id + "}}";
     }
 }
